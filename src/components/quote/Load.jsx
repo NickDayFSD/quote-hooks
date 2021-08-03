@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Load = (onClick) => (
+// eslint-disable-next-line react/prop-types
+const Load = ({ onClick }) => (
   <>
     <button onClick={onClick}>Load Quote</button>
   </>
 );
 
 Load.PropTypes = {
-  thing: PropTypes.thing,
+  onClick: PropTypes.func,
 };
 
 export default Load;

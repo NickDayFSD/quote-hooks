@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import fetchQuote from '../../services/twinPeaksApi';
-import Quote from '../../components/quote/Quote';
+import Display from '../../components/quote/Quote';
 import Load from '../../components/quote/Load';
 
 const TwinPeaks = () => {
-  const [quote, getQuote] = useState();
+  const [quote, getQuote] = useState({});
 
   const quoter = async () => {
-    const newQuote = await fetchQuote();
-    getQuote(newQuote);
+    const quote = await fetchQuote();
+    getQuote(quote);
   };
 
   return (
     <>
-      <Quote text={quote} />
+      <Display quote={quote} />
       <Load onClick={quoter} />
     </>
   );
